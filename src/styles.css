@@ -1,0 +1,540 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #1a3a5c;
+  --primary-light: #2c5282;
+  --primary-dark: #0f2440;
+  --accent: #c9a84c;
+  --bg: #f4f6f8;
+  --card-bg: #fff;
+  --text: #1a202c;
+  --text-light: #4a5568;
+  --border: #d1d5db;
+  --error: #c53030;
+  --success: #276749;
+  --radius: 8px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Sans Tamil', 'Nirmala UI', 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Header */
+.app-header {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: #fff;
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.app-header h1 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.app-header .college-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.app-header .subtitle {
+  font-size: 1rem;
+  margin-top: 8px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.app-header .college-sub {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* Main container */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 16px;
+}
+
+/* Cards */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 1.05rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+}
+
+/* Form */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 4px;
+}
+
+.form-group label .required {
+  color: var(--error);
+}
+
+.form-group select,
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+.form-group select:focus,
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(26, 58, 92, 0.15);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.form-group input[type="date"] {
+  cursor: pointer;
+}
+
+/* Read-only fields */
+.readonly-field {
+  background: #edf2f7 !important;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Event cards */
+.events-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.event-card {
+  background: #fafbfc;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  position: relative;
+}
+
+.event-card .event-number {
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.event-card .event-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.event-card .event-grid .full-width {
+  grid-column: 1 / -1;
+}
+
+.btn-remove {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  color: var(--error);
+  border: none;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.btn-remove:hover {
+  background: #fed7d7;
+}
+
+/* Buttons */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: var(--primary-dark);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-danger {
+  background: transparent;
+  border: 2px solid var(--error);
+  color: var(--error);
+}
+
+.btn-success {
+  background: var(--success);
+  color: #fff;
+}
+
+.btn-add {
+  background: #ebf8ff;
+  color: var(--primary);
+  border: 2px dashed var(--primary-light);
+  width: 100%;
+  padding: 12px;
+}
+
+.btn-print {
+  background: #4a5568;
+  color: #fff;
+}
+
+/* Validation errors */
+.error-list {
+  background: #fff5f5;
+  border: 1px solid #fc8181;
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+
+.error-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.error-list li {
+  color: var(--error);
+  font-size: 0.9rem;
+  padding: 2px 0;
+}
+
+.error-list li::before {
+  content: '⚠ ';
+}
+
+/* Success screen */
+.success-screen {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.success-icon {
+  font-size: 3rem;
+  color: var(--success);
+  margin-bottom: 16px;
+}
+
+.success-screen h2 {
+  color: var(--success);
+  margin-bottom: 8px;
+}
+
+.success-details {
+  text-align: left;
+  max-width: 500px;
+  margin: 20px auto;
+  background: #f0fff4;
+  border: 1px solid #c6f6d5;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.success-details p {
+  padding: 6px 0;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.95rem;
+}
+
+.success-details p:last-child {
+  border-bottom: none;
+}
+
+.success-details strong {
+  display: inline-block;
+  width: 180px;
+  color: var(--text-light);
+}
+
+/* Preview section */
+.preview-section {
+  display: none;
+}
+
+.preview-section.visible {
+  display: block;
+}
+
+.preview-doc {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 24px;
+}
+
+.preview-header {
+  text-align: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--primary);
+}
+
+.preview-header h2 {
+  font-size: 1.15rem;
+  color: var(--primary);
+  margin-bottom: 2px;
+}
+
+.preview-header p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin: 1px 0;
+}
+
+.preview-title {
+  margin-bottom: 16px;
+}
+
+.preview-title h3 {
+  color: var(--primary);
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.preview-title p {
+  font-size: 0.9rem;
+  margin: 2px 0;
+}
+
+.preview-table-wrap {
+  overflow-x: auto;
+}
+
+.preview-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.preview-table th {
+  background: var(--primary);
+  color: #fff;
+  padding: 8px 10px;
+  text-align: left;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.preview-table td {
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  vertical-align: top;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.preview-table tr:nth-child(even) {
+  background: #f7fafc;
+}
+
+/* Modal */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.visible {
+  display: flex;
+}
+
+.modal {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 24px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+.modal h3 {
+  margin-bottom: 12px;
+}
+
+.modal p {
+  margin-bottom: 20px;
+  color: var(--text-light);
+}
+
+.modal .btn-group {
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .event-card .event-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-group {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .app-header .college-name {
+    font-size: 1.1rem;
+  }
+
+  .container {
+    padding: 12px 8px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: #fff;
+    padding: 0;
+    margin: 0;
+  }
+
+  .app-header,
+  .no-print,
+  .form-section,
+  .btn-group,
+  .modal-overlay,
+  .success-screen {
+    display: none !important;
+  }
+
+  .preview-section {
+    display: block !important;
+  }
+
+  .preview-section .card {
+    box-shadow: none;
+    border: none;
+    padding: 0;
+  }
+
+  .preview-doc {
+    border: none;
+    padding: 0;
+  }
+
+  .preview-table th {
+    background: #1a3a5c !important;
+    color: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+/* Hidden utility */
+.hidden {
+  display: none !important;
+}
